@@ -195,6 +195,29 @@ body {
     background-color: #063e7f;
 }
 
+/* Consent Box */
+.consent-box {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px;
+    background-color: #f0f2f5;
+    border-radius: 8px;
+    font-size: 14px;
+}
+
+.consent-box input[type="checkbox"] {
+    cursor: pointer;
+    width: 18px;
+    height: 18px;
+}
+
+.consent-box label {
+    cursor: pointer;
+    flex: 1;
+    color: #1c1e21;
+}
+
 /* Links */
 .links {
     padding: 0 16px 24px 16px;
@@ -249,6 +272,126 @@ body {
     border-color: #bcc0c4;
 }
 
+/* Falling Flowers Animation */
+.flowers-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    overflow: hidden;
+    display: none;
+}
+
+.flowers-container.active {
+    display: block;
+}
+
+.flower {
+    position: absolute;
+    font-size: 30px;
+    animation: fall 3s linear forwards;
+}
+
+@keyframes fall {
+    to {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes sway {
+    0%, 100% { transform: translateX(0) translateY(0) rotate(0deg); }
+    25% { transform: translateX(30px) translateY(100px) rotate(90deg); }
+    50% { transform: translateX(0) translateY(200px) rotate(180deg); }
+    75% { transform: translateX(-30px) translateY(300px) rotate(270deg); }
+}
+
+.flower.sway {
+    animation: sway 4s ease-in forwards;
+}
+
+/* Modal */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal.hidden {
+    display: none;
+}
+
+.modal-content {
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 32px 24px;
+    max-width: 350px;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.4s ease-out;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-header {
+    font-size: 48px;
+    margin-bottom: 16px;
+    animation: bounce 0.6s ease-out;
+}
+
+@keyframes bounce {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    color: #0a66c2;
+    margin-bottom: 12px;
+    font-weight: 700;
+}
+
+.modal-content p {
+    font-size: 14px;
+    color: #65676b;
+    margin-bottom: 24px;
+    line-height: 1.6;
+}
+
+.btn-close {
+    padding: 12px 32px;
+    background-color: #0a66c2;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-close:hover {
+    background-color: #084fa6;
+}
+
 /* Mobile responsiveness */
 @media (max-width: 600px) {
     .container {
@@ -261,5 +404,9 @@ body {
 
     .facebook-logo h2 {
         font-size: 36px;
+    }
+
+    .modal-content {
+        max-width: 90%;
     }
 }
