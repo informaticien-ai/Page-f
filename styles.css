@@ -1,0 +1,265 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    background-color: #f0f2f5;
+    color: #1c1e21;
+}
+
+.container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 16px;
+    background-color: #f0f2f5;
+    font-size: 13px;
+    color: #65676b;
+    border-bottom: 1px solid #ccc;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.time {
+    font-weight: 600;
+}
+
+.icons {
+    display: flex;
+    gap: 6px;
+}
+
+.header-right {
+    display: flex;
+    gap: 8px;
+}
+
+/* Mode payant */
+.mode-payant {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px;
+    background-color: #f0f2f5;
+}
+
+.mode-payant h1 {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.question {
+    font-size: 20px;
+    margin-left: 8px;
+}
+
+.btn-change {
+    background-color: #e4e6eb;
+    border: none;
+    padding: 10px 16px;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.btn-change:hover {
+    background-color: #d0d2d7;
+}
+
+/* Navigation */
+.navigation {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    background-color: #ffffff;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.back {
+    font-size: 24px;
+    margin-right: 16px;
+    cursor: pointer;
+}
+
+.lite {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+/* Disclaimer */
+.disclaimer {
+    padding: 16px;
+    background-color: #ffffff;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #65676b;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+.disclaimer a {
+    color: #0a66c2;
+    text-decoration: none;
+}
+
+.disclaimer a:hover {
+    text-decoration: underline;
+}
+
+/* Warning */
+.warning {
+    background-color: #fffacd;
+    padding: 16px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #856404;
+    text-align: center;
+    border-bottom: 1px solid #e5e7eb;
+}
+
+/* Facebook Logo */
+.facebook-logo {
+    text-align: center;
+    padding: 24px 16px;
+}
+
+.facebook-logo h2 {
+    font-size: 48px;
+    font-weight: 700;
+    color: #0a66c2;
+    margin: 0;
+}
+
+/* Login Form */
+.login-form {
+    padding: 0 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.login-form input {
+    padding: 12px 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    background-color: #f0f2f5;
+    color: #1c1e21;
+}
+
+.login-form input::placeholder {
+    color: #8a8d91;
+}
+
+.login-form input:focus {
+    outline: none;
+    background-color: #ffffff;
+    border-color: #0a66c2;
+}
+
+.btn-login {
+    padding: 12px 16px;
+    background-color: #0a66c2;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 8px;
+    margin-bottom: 16px;
+}
+
+.btn-login:hover {
+    background-color: #084fa6;
+}
+
+.btn-login:active {
+    background-color: #063e7f;
+}
+
+/* Links */
+.links {
+    padding: 0 16px 24px 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+}
+
+.forgot-password {
+    color: #0a66c2;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.forgot-password:hover {
+    text-decoration: underline;
+}
+
+.divider {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: #8a8d91;
+    font-size: 14px;
+}
+
+.divider::before,
+.divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background-color: #ccc;
+}
+
+.btn-create {
+    width: 100%;
+    padding: 12px 16px;
+    background-color: #ffffff;
+    color: #1c1e21;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.btn-create:hover {
+    background-color: #f0f2f5;
+    border-color: #bcc0c4;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 600px) {
+    .container {
+        max-width: 100%;
+    }
+
+    .mode-payant h1 {
+        font-size: 24px;
+    }
+
+    .facebook-logo h2 {
+        font-size: 36px;
+    }
+}
